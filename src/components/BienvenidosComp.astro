@@ -1,0 +1,25 @@
+---
+import Logo from "../assets/images/M_NEGATIVO.png";
+import BienvenidaGif from "../assets/images/2iFb.gif";
+---
+    <div
+      id="welcome-screen"
+      class="fixed inset-0 bg-[#0f0f1a] flex flex-col items-center justify-center z-50"
+    >
+  <!-- 🎞️ GIF local -->
+  <img
+    src={BienvenidaGif.src}
+    alt="Animación de bienvenida"
+    class="w-64 h-64 mb-6 rounded-2xl object-cover shadow-lg"
+  />
+      <h1 class="text-3xl font-['Sour_Gummy'] mb-3">¡Bienvenidos a mi portafolio!</h1>
+      <p class="text-gray-300 mb-6 text-center max-w-md">
+        Explora mi mundo de desarrollo, diseño y tecnología.
+      </p>
+      <button
+        id="continue-btn"
+        class="px-6 py-3 bg-pink-200 text-pink-500 rounded-2xl hover:bg-pink-600 transition"
+      >
+        Continuar
+      </button>
+    </div>

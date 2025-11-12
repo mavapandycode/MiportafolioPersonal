@@ -3,6 +3,8 @@ import "../styles/global.css";
 import Logo from "../assets/images/M_NEGATIVO.png";
 import Perfil from "../assets/images/imgperfil.png";
 import FotoM from "../assets/images/FotoM.png";
+
+import BienvenidosComp from "../components/BienvenidosComp.astro";
 ---
 
 <!DOCTYPE html>
@@ -17,32 +19,29 @@ import FotoM from "../assets/images/FotoM.png";
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="../styles/global.css" />
   </head>
 
-  <!-- 🌈 Aplica Poppins globalmente -->
   <body class="bg-[#1e1e2f] text-white font-['Poppins'] relative overflow-hidden">
+    <!-- 🌸 Pantalla de bienvenida -->
+    <BienvenidosComp />
 
     <!-- 🌀 Pantalla de carga -->
     <div
       id="loader"
-      class="fixed inset-0 bg-[#0f0f1a] flex flex-col items-center justify-center z-50 transition-opacity duration-700"
+      class="fixed inset-0 bg-[#0f0f1a] flex flex-col items-center justify-center z-40 opacity-0 pointer-events-none transition-opacity duration-700"
     >
       <img src={Logo.src} alt="Cargando" class="w-20 h-20 animate-bounce" />
-      <p class="mt-4 text-gray-300 text-lg animate-pulse font-['Poppins']">
-        Cargando...
-      </p>
+      <p class="mt-4 text-gray-300 text-lg animate-pulse">Cargando...</p>
     </div>
 
     <!-- 🌟 Contenido principal -->
     <div id="main-content" class="opacity-0 transition-opacity duration-700">
-
       <!-- NAVBAR -->
       <nav class="bg-[#1e1e2f]">
         <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
-          <a
-            href="#"
-            class="text-white flex items-center gap-2 text-2xl animate__animated animate__fadeInDown font-['Sour_Gummy']"
-          >
+          <a href="#" class="text-white flex items-center gap-2 text-2xl font-['Sour_Gummy']">
             <img src={Logo.src} alt="Logo" width="50" height="50" />
             MavaPandy.code
           </a>
@@ -52,18 +51,14 @@ import FotoM from "../assets/images/FotoM.png";
       <!-- CONTENIDO -->
       <main class="max-w-7xl mx-auto px-6 py-10">
         <section class="flex flex-col md:flex-row items-center justify-between">
-
           <!-- Texto -->
           <div class="md:w-1/2 mt-5">
-            <h2 class="text-5xl  mb-3">Mariana Valencia R.</h2>
+            <h2 class="text-5xl mb-3">Mariana Valencia R.</h2>
             <p class="text-base mt-2 mb-2">
               Desarrolladora Web | Tecnóloga en Análisis y Desarrollo de
               Sistemas de Información | Administradora de Sistemas en la Nube
             </p>
-
-            <p
-              class="inline-block text-pink-500 bg-pink-200 px-3 py-2 mt-3 text-sm rounded-xl"
-            >
+            <p class="inline-block text-pink-500 bg-pink-200 px-3 py-2 mt-3 text-sm rounded-xl">
               Medellín | Colombia
             </p>
           </div>
@@ -80,22 +75,42 @@ import FotoM from "../assets/images/FotoM.png";
       </main>
     </div>
 
-    <!-- ⚙️ Script para el loading -->
+    <!-- ⚙️ Script -->
     <script>
-      window.addEventListener("load", () => {
-        const loader = document.getElementById("loader");
-        const content = document.getElementById("main-content");
+window.addEventListener("DOMContentLoaded", () => {
+  const welcome = document.getElementById("welcome-screen");
+  const loader = document.getElementById("loader");
+  const content = document.getElementById("main-content");
+  const continueBtn = document.getElementById("continue-btn");
 
-        if (!loader || !content) return;
+  if (!continueBtn || !welcome || !loader || !content) return;
+
+  continueBtn.addEventListener("click", () => {
+    // Oculta la pantalla de bienvenida
+    welcome.style.opacity = "0";
+    welcome.style.pointerEvents = "none";
+
+    setTimeout(() => {
+      welcome.style.display = "none";
+
+      // Muestra el loader
+      loader.style.opacity = "1";
+      loader.style.pointerEvents = "auto";
+
+      // ⏳ Simula un tiempo de carga (1.5s aprox)
+      setTimeout(() => {
+        loader.style.opacity = "0";
 
         setTimeout(() => {
-          loader.style.opacity = "0";
-          setTimeout(() => {
-            loader.style.display = "none";
-            content.style.opacity = "1";
-          }, 600);
-        }, 1000);
-      });
-    </script>
+          loader.style.display = "none";
+          content.style.opacity = "1"; // Muestra el contenido principal
+        }, 600);
+      }, 1500);
+    }, 500);
+  });
+});
+</script>
+
   </body>
 </html>
+
