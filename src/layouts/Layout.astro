@@ -6,6 +6,15 @@ import FotoM from "../assets/images/FotoM.png";
 import BienvenidosComp from "../components/BienvenidosComp.astro";
 import CargaPantallaComp from "../components/CargaPantallaComp.astro";
 import NavbarComp from "../components/NavbarComp.astro";
+import IntroduccionComp from "../components/IntroduccionComp.astro";
+
+import PowerBi from "../assets/iconos/PowerBIcono.svg";
+import Ansible from "../assets/iconos/AnsibleIcono.svg";
+import VMWare from "../assets/iconos/VmwareIcono.png";
+import AWS from "../assets/iconos/AwsIcono.png";
+import Python from "../assets/iconos/PythonIcono.png";
+import Astro from "../assets/iconos/AstroIcono.png";
+import Tailwind from "../assets/iconos/TailwindIcono.svg";
 ---
 
 <!DOCTYPE html>
@@ -30,29 +39,7 @@ import NavbarComp from "../components/NavbarComp.astro";
 
       <!-- CONTENIDO -->
       <main class="max-w-7xl mx-auto px-6">
-        <section class="pt-5 flex flex-col md:flex-row items-center justify-center text-center md:text-left">
-
-    <!-- Texto -->
-    <div class="md:w-1/2 mt-5">
-      <h2 class="text-5xl mb-3">Hola! Soy Mariana</h2>
-      <p class="text-base mt-2 mb-2">
-        Desarrolladora Web | Ingeniera de Infraestructura y Automatización
-      </p>
-      <p class="text-base text-stone-400">Soy desarrolladora web e ingeniera de infraestructura y automatización. Me especializo en crear aplicaciones modernas, eficientes y atractivas, combinando conocimientos técnicos y creatividad para ofrecer experiencias digitales innovadoras.</p>
-      <p class="inline-block text-pink-500 bg-pink-300/20 px-3 py-2 mt-3 text-sm rounded-xl">
-        Medellín | Colombia
-      </p>
-    </div>
-
-    <!-- Imagen -->
-    <div class="w-full md:w-1/2 flex justify-center p-3 md:mt-0">
-      <img
-        src={FotoM.src}
-        alt="Imagen personal"
-        class="w-56 md:w-64 object-contain"
-      />
-    </div>
-  </section>
+        <IntroduccionComp />
 
 <section class="py-10">
   <h3 class="text-2xl mb-6">Experiencia Profesional</h3>
@@ -114,6 +101,83 @@ import NavbarComp from "../components/NavbarComp.astro";
     </div>
   </div>
 </section>
+
+<section class="py-14">
+  <h3 class="text-2xl mb-6">Tecnologías y Herramientas</h3>
+
+  <div class=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Tarjeta 1 -->
+    <div class="bg-pink-300/10 border border-pink-200/20 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300">
+      <div class="flex items-center gap-4 mb-5">
+        <img src={Ansible.src} alt="Power Bi Logo" class="w-10 h-10" />
+        <h4 class="text-lg font-medium text-white">Ansible</h4>
+      </div>
+      <div class="w-full bg-pink-400/20 rounded-full h-3">
+        <div class="bg-pink-400 h-3 rounded-full w-[90%] transition-all duration-500"></div>
+      </div>
+      <p class="text-sm text-pink-300 mt-2">Dominio 90%</p>
+    </div>
+
+    <!-- Tarjeta 2 -->
+    <div class="bg-pink-300/10 border border-pink-200/20 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300">
+      <div class="flex items-center gap-4 mb-5">
+        <img src={VMWare.src} alt="CSS Logo" class="w-10 h-10" />
+        <h4 class="text-lg font-medium text-white">VMWare</h4>
+      </div>
+      <div class="w-full bg-pink-400/20 rounded-full h-3">
+        <div class="bg-pink-400 h-3 rounded-full w-[70%] transition-all duration-500"></div>
+      </div>
+      <p class="text-sm text-pink-300 mt-2">Dominio 70%</p>
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div class="bg-pink-300/10 border border-pink-200/20 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300">
+      <div class="flex items-center gap-4 mb-5">
+        <img src={AWS.src} alt="JavaScript Logo" class="w-10 h-10" />
+        <h4 class="text-lg font-medium text-white">AWS</h4>
+      </div>
+      <div class="w-full bg-pink-400/20 rounded-full h-3">
+        <div class="bg-pink-400 h-3 rounded-full w-[80%] transition-all duration-500"></div>
+      </div>
+      <p class="text-sm text-pink-300 mt-2">Dominio 80%</p>
+    </div>
+
+    <!-- Ejemplo adicional -->
+    <div class="bg-pink-300/10 border border-pink-200/20 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300">
+      <div class="flex items-center gap-4 mb-5">
+        <img src={Python.src} alt="React Logo" class="w-10 h-10" />
+        <h4 class="text-lg font-medium text-white">Python</h4>
+      </div>
+      <div class="w-full bg-pink-400/20 rounded-full h-3">
+        <div class="bg-pink-400 h-3 rounded-full w-[75%] transition-all duration-500"></div>
+      </div>
+      <p class="text-sm text-pink-300 mt-2">Dominio 75%</p>
+    </div>
+
+    <div class="bg-pink-300/10 border border-pink-200/20 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300">
+      <div class="flex items-center gap-4 mb-5">
+        <img src={Astro.src} alt="Astro Logo" class="w-10 h-10" />
+        <h4 class="text-lg font-medium text-white">Astro</h4>
+      </div>
+      <div class="w-full bg-pink-400/20 rounded-full h-3">
+        <div class="bg-pink-400 h-3 rounded-full w-[80%] transition-all duration-500"></div>
+      </div>
+      <p class="text-sm text-pink-300 mt-2">Dominio 80%</p>
+    </div>
+
+    <div class="bg-pink-300/10 border border-pink-200/20 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300">
+      <div class="flex items-center gap-4 mb-5">
+        <img src={Tailwind.src} alt="Tailwind Logo" class="w-10 h-10" />
+        <h4 class="text-lg font-medium text-white">TailwindCSS</h4>
+      </div>
+      <div class="w-full bg-pink-400/20 rounded-full h-3">
+        <div class="bg-pink-400 h-3 rounded-full w-[85%] transition-all duration-500"></div>
+      </div>
+      <p class="text-sm text-pink-300 mt-2">Dominio 85%</p>
+    </div>
+  </div>
+</section>
+
 
 
 
