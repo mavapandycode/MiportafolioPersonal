@@ -1,10 +1,11 @@
 ---
 import "../styles/global.css";
 import Logo from "../assets/images/M_NEGATIVO.png";
-import Perfil from "../assets/images/imgperfil.png";
 import FotoM from "../assets/images/FotoM.png";
 
 import BienvenidosComp from "../components/BienvenidosComp.astro";
+import CargaPantallaComp from "../components/CargaPantallaComp.astro";
+import NavbarComp from "../components/NavbarComp.astro";
 ---
 
 <!DOCTYPE html>
@@ -15,50 +16,30 @@ import BienvenidosComp from "../components/BienvenidosComp.astro";
     <title>Mariana Valencia | Portafolio</title>
 
     <!-- ✨ Fuentes -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="../styles/global.css" />
   </head>
 
-  <body class="bg-[#1e1e2f] text-white font-['Poppins'] relative overflow-hidden">
-    <!-- 🌸 Pantalla de bienvenida -->
-    <BienvenidosComp />
-
-    <!-- 🌀 Pantalla de carga -->
-    <div
-      id="loader"
-      class="fixed inset-0 bg-[#0f0f1a] flex flex-col items-center justify-center z-40 opacity-0 pointer-events-none transition-opacity duration-700"
-    >
-      <img src={Logo.src} alt="Cargando" class="w-20 h-20 animate-bounce" />
-      <p class="mt-4 text-gray-300 text-lg animate-pulse">Cargando...</p>
-    </div>
+  <body class="bg-[#1e1e2f] text-white font-['Poppins'] relative overflow-x-hidden">
+    <!-- <BienvenidosComp />
+    <CargaPantallaComp /> -->
 
     <!-- 🌟 Contenido principal -->
-    <div id="main-content" class="opacity-0 transition-opacity duration-700">
-      <!-- NAVBAR -->
-      <nav class="bg-[#1e1e2f]">
-        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
-          <a href="#" class="text-white flex items-center gap-2 text-2xl font-['Sour_Gummy']">
-            <img src={Logo.src} alt="Logo" width="50" height="50" />
-            MavaPandy.code
-          </a>
-        </div>
-      </nav>
+    <div id="main-content" class="opacity-100 transition-opacity duration-700">
+      <NavbarComp />
 
       <!-- CONTENIDO -->
-<main class="max-w-7xl mx-auto px-6">
-  <section class="flex flex-col md:flex-row items-center justify-center text-center md:text-left">
+      <main class="max-w-7xl mx-auto px-6">
+        <section class="pt-5 flex flex-col md:flex-row items-center justify-center text-center md:text-left">
 
     <!-- Texto -->
     <div class="md:w-1/2 mt-5">
-      <h2 class="text-5xl mb-3">Mariana Valencia R.</h2>
+      <h2 class="text-5xl mb-3">Hola! Soy Mariana</h2>
       <p class="text-base mt-2 mb-2">
         Desarrolladora Web | Ingeniera de Infraestructura y Automatización
       </p>
-      <p class="inline-block text-pink-500 bg-pink-200 px-3 py-2 mt-3 text-sm rounded-xl">
+      <p class="text-base text-stone-400">Soy desarrolladora web e ingeniera de infraestructura y automatización. Me especializo en crear aplicaciones modernas, eficientes y atractivas, combinando conocimientos técnicos y creatividad para ofrecer experiencias digitales innovadoras.</p>
+      <p class="inline-block text-pink-500 bg-pink-300/20 px-3 py-2 mt-3 text-sm rounded-xl">
         Medellín | Colombia
       </p>
     </div>
@@ -72,6 +53,78 @@ import BienvenidosComp from "../components/BienvenidosComp.astro";
       />
     </div>
   </section>
+
+<section class="py-10">
+  <h3 class="text-2xl mb-6">Experiencia Profesional</h3>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
+    <!-- Tarjeta 1 -->
+    <div class="bg-pink-300/10 border border-pink-200/20 rounded-2xl p-6 flex flex-col justify-between hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300">
+      <div>
+        <h4 class="text-xl font-semibold mb-2">Ingeniera de Infraestructura y Automatización</h4>
+                 <p class="text-sm text-pink-400 mb-3">Bancolombia</p>
+        <p class="text-sm text-gray-200 mb-4">
+          Gestión de infraestructura en la nube, automatización de procesos y optimización de sistemas para mejorar la eficiencia operativa.
+        </p>
+                <div class="flex flex-wrap gap-2 my-2">
+          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">AWS</span>
+          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Power Platform</span>
+          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Python</span>
+          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Ansible</span>
+        </div>
+      </div>
+      <span class="text-pink-400 text-sm font-medium mt-auto">Noviembre 2025 - Actualidad</span>
+    </div>
+
+    <!-- Tarjeta 2 -->
+    <div class="bg-pink-300/10 border border-pink-200/20 rounded-2xl p-6 flex flex-col justify-between hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300">
+      <div>
+        <h4 class="text-xl font-semibold mb-2">Administradora Sistemas Nube</h4>
+         <p class="text-sm text-pink-400 mb-3">Tata Consultancy Services</p>
+        <p class="text-sm text-gray-200 mb-4">
+          Administración y optimización de infraestructuras en la nube, implementación de soluciones escalables y seguras.
+        </p>
+                        <div class="flex flex-wrap gap-2 my-2">
+          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">AWS</span>
+          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Power Platform</span>
+          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Azure | Pipelines</span>
+          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Ansible</span>
+        </div>
+      </div>
+      <span class="text-pink-400 text-sm font-medium mt-auto">Junio 2025 - Octubre 2025</span>
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div class="bg-pink-300/10 border border-pink-200/20 rounded-2xl p-6 flex flex-col justify-between hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300">
+      <div>
+        <h4 class="text-xl font-semibold mb-2">Analista</h4>
+                 <p class="text-sm text-pink-400 mb-3">Tata Consultancy Services</p>
+        <p class="text-sm text-gray-200 mb-4">
+          Administración de plataformas virtualizadoras, maquinas virtuales y automatización de tareas repetitivas en operación.
+        </p>
+                        <div class="flex flex-wrap gap-2 my-2">
+          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">VMWare</span>
+          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Ansible</span>
+          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Python</span>
+          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Nutanix</span>
+          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Power Platform</span>
+        </div>
+      </div>
+      <span class="text-pink-400 text-sm font-medium mt-auto">Marzo 2023 - Junio 2025</span>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- <section class="bg-pink-300/10 p-6 rounded-2xl backdrop-blur-sm">
+  <h3 class="text-2xl mb-4">Sobre mí</h3>
+  <p class="text-base mb-6 text-justify">
+    Soy una apasionada desarrolladora web e ingeniera de infraestructura y automatización con experiencia en la creación de soluciones digitales innovadoras. Me especializo en el desarrollo front-end y back-end, utilizando tecnologías modernas para construir aplicaciones web eficientes y atractivas. Además, tengo habilidades en la gestión de infraestructuras tecnológicas y la automatización de procesos para optimizar el rendimiento y la escalabilidad de los sistemas. Mi objetivo es combinar mis conocimientos técnicos con mi creatividad para ofrecer experiencias digitales excepcionales.
+  </p>
+</section> -->
+
 </main>
 
     </div>
