@@ -38,70 +38,60 @@ import Git from "../assets/images/NRI0.gif";
   <link rel="stylesheet" href="../styles/global.css" />
 
   <!-- 🔥 AQUI AGREGAS TU FAVICON -->
-<link rel="icon" href="/favicon.png" />
+  <link rel="icon" href="/favicon.png" />
 </head>
 
-  <body class=" bg-[#1e1e2f] bg-gradient-to-br from-[#82225F] via-[#1e1e2f] to-[#25064F] animate-gradient text-white font-['Poppins'] relative overflow-x-hidden">
-    <BienvenidosComp />
-    <CargaPantallaComp />
+<body class=" bg-[#1e1e2f] bg-gradient-to-br from-[#82225F] via-[#1e1e2f] to-[#25064F] animate-gradient text-white font-['Poppins'] relative overflow-x-hidden">
+  <BienvenidosComp />
+  <CargaPantallaComp />
+  
+  <div id="main-content" class="opacity-0 transition-opacity duration-700">
+    <NavbarComp />
+    <main class="max-w-7xl mx-auto px-6">
+      <IntroduccionComp />
+      
+      <section class="py-10"> <!-- Sección Experiencia Profesional -->
+        <h3 class="text-2xl mb-6">Experiencia Profesional</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
+          <!-- Tarjetas Experiencia -->
+          <ExperienciaCard
+            titulo="Ingeniera de Infraestructura y Automatización"
+            empresa="Bancolombia"
+            descripcion="Gestión de infraestructura en la nube, automatización de procesos y optimización de sistemas para mejorar la eficiencia operativa."
+            tecnologias={["AWS", "Python", "Power Platform", "Ansible"]}
+            fecha="Noviembre 2025 - Actualidad"
+          />
+          <ExperienciaCard
+            titulo="Administradora Sistemas Nube"
+            empresa="Tata Consultancy Services"
+            descripcion="Administración y optimización de infraestructuras en la nube, implementación de soluciones escalables y seguras."
+            tecnologias={["AWS", "Power Platform", "Azure | Pipelines", "Ansible"]}
+            fecha="Junio 2025 - Octubre 2025"
+          />
+          <ExperienciaCard
+            titulo="Analista"
+            empresa="Tata Consultancy Services"
+            descripcion="Administración de plataformas virtualizadoras, maquinas virtuales y automatización de tareas repetitivas en operación."
+            tecnologias={["VMWare", "Ansible", "Python", "Nutanix", "Power Platform"]}
+            fecha="Marzo 2023 - Junio 2025"
+          />
+        </div>
+      </section>
 
-    <!-- 🌟 Contenido principal -->
-    <div id="main-content" class="opacity-0 transition-opacity duration-700">
-      <NavbarComp />
+      <section class="py-14">
+        <h3 class="text-2xl mb-6">Tecnologías y Herramientas</h3>
+        <div class=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- CONTENIDO -->
-      <main class="max-w-7xl mx-auto px-6">
-        <IntroduccionComp />
-
-<section class="py-10">
-  <h3 class="text-2xl mb-6">Experiencia Profesional</h3>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
-    <!-- Tarjeta 1 -->
-    <ExperienciaCard
-  titulo="Ingeniera de Infraestructura y Automatización"
-  empresa="Bancolombia"
-  descripcion="Gestión de infraestructura en la nube, automatización de procesos y optimización de sistemas para mejorar la eficiencia operativa."
-  tecnologias={["AWS", "Python", "Power Platform", "Ansible"]}
-  fecha="Noviembre 2025 - Actualidad"
-/>
-
-    <!-- Tarjeta 2 -->
-    <ExperienciaCard
-  titulo="Administradora Sistemas Nube"
-  empresa="Tata Consultancy Services"
-  descripcion="Administración y optimización de infraestructuras en la nube, implementación de soluciones escalables y seguras."
-  tecnologias={["AWS", "Power Platform", "Azure | Pipelines", "Ansible"]}
-  fecha="Junio 2025 - Octubre 2025"
-/>
-
-
-    <!-- Tarjeta 3 -->
-    <ExperienciaCard
-  titulo="Analista"
-  empresa="Tata Consultancy Services"
-  descripcion="Administración de plataformas virtualizadoras, maquinas virtuales y automatización de tareas repetitivas en operación."
-  tecnologias={["VMWare", "Ansible", "Python", "Nutanix", "Power Platform"]}
-  fecha="Marzo 2023 - Junio 2025"
-/>
-  </div>
-</section>
-
-<section class="py-14">
-  <h3 class="text-2xl mb-6">Tecnologías y Herramientas</h3>
-
-  <div class=" mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    <!-- Tarjeta 1 -->
-    <div class="bg-pink-300/10 border border-pink-200/20 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300">
-      <div class="flex items-center gap-4 mb-5">
-        <img src={Ansible.src} alt="Power Bi Logo" class="w-10 h-10" />
-        <h4 class="text-lg font-medium text-white">Ansible</h4>
-      </div>
-      <div class="w-full bg-pink-400/20 rounded-full h-3">
-        <div class="bg-pink-400 h-3 rounded-full w-[90%] transition-all duration-500"></div>
-      </div>
-      <p class="text-sm text-pink-300 mt-2">Dominio 90%</p>
-    </div>
+          <div class="bg-pink-300/10 border border-pink-200/20 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300">
+            <div class="flex items-center gap-4 mb-5">
+              <img src={Ansible.src} alt="Power Bi Logo" class="w-10 h-10" />
+              <h4 class="text-lg font-medium text-white">Ansible</h4>
+            </div>
+            <div class="w-full bg-pink-400/20 rounded-full h-3">
+              <div class="bg-pink-400 h-3 rounded-full w-[90%] transition-all duration-500"></div>
+            </div>
+            <p class="text-sm text-pink-300 mt-2">Dominio 90%</p>
+          </div>
 
     <!-- Tarjeta 2 -->
     <div class="bg-pink-300/10 border border-pink-200/20 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300">
@@ -230,19 +220,6 @@ import Git from "../assets/images/NRI0.gif";
     </a>
   </div>
 </section>
-
-
-
-
-
-
-
-<!-- <section class="bg-pink-300/10 p-6 rounded-2xl backdrop-blur-sm">
-  <h3 class="text-2xl mb-4">Sobre mí</h3>
-  <p class="text-base mb-6 text-justify">
-    Soy una apasionada desarrolladora web e ingeniera de infraestructura y automatización con experiencia en la creación de soluciones digitales innovadoras. Me especializo en el desarrollo front-end y back-end, utilizando tecnologías modernas para construir aplicaciones web eficientes y atractivas. Además, tengo habilidades en la gestión de infraestructuras tecnológicas y la automatización de procesos para optimizar el rendimiento y la escalabilidad de los sistemas. Mi objetivo es combinar mis conocimientos técnicos con mi creatividad para ofrecer experiencias digitales excepcionales.
-  </p>
-</section> -->
 
 </main>
 
