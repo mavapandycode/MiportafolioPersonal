@@ -1,0 +1,38 @@
+---
+interface Props {
+  titulo: string;
+  empresa: string;
+  descripcion: string;
+  tecnologias?: string[];
+  fecha: string;
+}
+
+const {
+  titulo,
+  empresa,
+  descripcion,
+  tecnologias = [],
+  fecha
+}: Props = Astro.props;
+---
+
+<div class="bg-pink-300/10 border border-pink-200/20 rounded-2xl p-6 flex flex-col justify-between hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300">
+  <div>
+    <h4 class="text-xl font-semibold mb-2">{titulo}</h4>
+    <p class="text-sm text-pink-400 mb-3">{empresa}</p>
+
+    <p class="text-sm text-gray-200 mb-4">
+      {descripcion}
+    </p>
+
+    <div class="flex flex-wrap gap-2 my-2">
+      {tecnologias.map((tec: string) => (
+        <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">
+          {tec}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <span class="text-pink-300 text-sm font-medium mt-auto">{fecha}</span>
+</div>

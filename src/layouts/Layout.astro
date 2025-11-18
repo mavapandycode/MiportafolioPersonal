@@ -7,6 +7,7 @@ import BienvenidosComp from "../components/BienvenidosComp.astro";
 import CargaPantallaComp from "../components/CargaPantallaComp.astro";
 import NavbarComp from "../components/NavbarComp.astro";
 import IntroduccionComp from "../components/IntroduccionComp.astro";
+import ExperienciaCard from "../components/CardExperienciaComp.astro";
 
 import PowerBi from "../assets/iconos/PowerBIcono.svg";
 import Ansible from "../assets/iconos/AnsibleIcono.svg";
@@ -27,15 +28,18 @@ import Git from "../assets/images/NRI0.gif";
 
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mariana Valencia | Portafolio</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mariana Valencia | Portafolio</title>
 
-    <!-- ✨ Fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="../styles/global.css" />
-  </head>
+  <!-- ✨ Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../styles/global.css" />
+
+  <!-- 🔥 AQUI AGREGAS TU FAVICON -->
+<link rel="icon" href="/favicon.png" />
+</head>
 
   <body class=" bg-[#1e1e2f] bg-gradient-to-br from-[#82225F] via-[#1e1e2f] to-[#25064F] animate-gradient text-white font-['Poppins'] relative overflow-x-hidden">
     <BienvenidosComp />
@@ -54,59 +58,32 @@ import Git from "../assets/images/NRI0.gif";
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
     <!-- Tarjeta 1 -->
-    <div class="bg-pink-300/10 border border-pink-200/20 rounded-2xl p-6 flex flex-col justify-between hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300">
-      <div>
-        <h4 class="text-xl font-semibold mb-2">Ingeniera de Infraestructura y Automatización</h4>
-                 <p class="text-sm text-pink-400 mb-3">Bancolombia</p>
-        <p class="text-sm text-gray-200 mb-4">
-          Gestión de infraestructura en la nube, automatización de procesos y optimización de sistemas para mejorar la eficiencia operativa.
-        </p>
-                <div class="flex flex-wrap gap-2 my-2">
-          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">AWS</span>
-          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Power Platform</span>
-          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Python</span>
-          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Ansible</span>
-        </div>
-      </div>
-      <span class="text-pink-300 text-sm font-medium mt-auto">Noviembre 2025 - Actualidad</span>
-    </div>
+    <ExperienciaCard
+  titulo="Ingeniera de Infraestructura y Automatización"
+  empresa="Bancolombia"
+  descripcion="Gestión de infraestructura en la nube, automatización de procesos y optimización de sistemas para mejorar la eficiencia operativa."
+  tecnologias={["AWS", "Python", "Power Platform", "Ansible"]}
+  fecha="Noviembre 2025 - Actualidad"
+/>
 
     <!-- Tarjeta 2 -->
-    <div class="bg-pink-300/10 border border-pink-200/20 rounded-2xl p-6 flex flex-col justify-between hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300">
-      <div>
-        <h4 class="text-xl font-semibold mb-2">Administradora Sistemas Nube</h4>
-         <p class="text-sm text-pink-400 mb-3">Tata Consultancy Services</p>
-        <p class="text-sm text-gray-200 mb-4">
-          Administración y optimización de infraestructuras en la nube, implementación de soluciones escalables y seguras.
-        </p>
-                        <div class="flex flex-wrap gap-2 my-2">
-          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">AWS</span>
-          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Power Platform</span>
-          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Azure | Pipelines</span>
-          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Ansible</span>
-        </div>
-      </div>
-      <span class="text-pink-300 text-sm font-medium mt-auto">Junio 2025 - Octubre 2025</span>
-    </div>
+    <ExperienciaCard
+  titulo="Administradora Sistemas Nube"
+  empresa="Tata Consultancy Services"
+  descripcion="Administración y optimización de infraestructuras en la nube, implementación de soluciones escalables y seguras."
+  tecnologias={["AWS", "Power Platform", "Azure | Pipelines", "Ansible"]}
+  fecha="Junio 2025 - Octubre 2025"
+/>
+
 
     <!-- Tarjeta 3 -->
-    <div class="bg-pink-300/10 border border-pink-200/20 rounded-2xl p-6 flex flex-col justify-between hover:-translate-y-2 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300">
-      <div>
-        <h4 class="text-xl font-semibold mb-2">Analista</h4>
-                 <p class="text-sm text-pink-400 mb-3">Tata Consultancy Services</p>
-        <p class="text-sm text-gray-200 mb-4">
-          Administración de plataformas virtualizadoras, maquinas virtuales y automatización de tareas repetitivas en operación.
-        </p>
-                        <div class="flex flex-wrap gap-2 my-2">
-          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">VMWare</span>
-          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Ansible</span>
-          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Python</span>
-          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Nutanix</span>
-          <span class="bg-pink-400/20 text-pink-300 text-xs px-3 py-1 rounded-full">Power Platform</span>
-        </div>
-      </div>
-      <span class="text-pink-300 text-sm font-medium mt-auto">Marzo 2023 - Junio 2025</span>
-    </div>
+    <ExperienciaCard
+  titulo="Analista"
+  empresa="Tata Consultancy Services"
+  descripcion="Administración de plataformas virtualizadoras, maquinas virtuales y automatización de tareas repetitivas en operación."
+  tecnologias={["VMWare", "Ansible", "Python", "Nutanix", "Power Platform"]}
+  fecha="Marzo 2023 - Junio 2025"
+/>
   </div>
 </section>
 
